@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test API Wilds</title>
+</head>
+<body>
+    <h1>Test API Monster Hunter Wilds</h1>
+    <button onclick="testAPI()">Tester les endpoints</button>
+    <pre id="results"></pre>
+
+    <script>
+        async function testAPI() {
+            const results = document.getElementById('results');
+            results.textContent = 'Test en cours...\n';
+
+            const endpoints = [
+                'https://wilds.mhdb.io/fr/weapons',
+                'https://wilds.mhdb.io/en/weapons',
+                'https://wilds.mhdb.io/weapons',
+                'https://wilds.mhdb.io/api/fr/weapons',
+            ];
+
+            for (const url of endpoints) {
+                try {
+                    console.log(`Testing: ${url}`);
+                    const res = await fetch(url);
+                    const text = await res.text();
+
+                    results.textContent += `\n✓ ${url}\n`;
+                    results.textContent += `Status: ${res.status}\n`;
+                    results.textContent += `First 200 chars: ${text.substring(0, 200)}\n`;
+                    results.textContent += `---\n`;
+                } catch (err) {
+                    results.textContent += `\n✗ ${url}\nError: ${err.message}\n---\n`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
