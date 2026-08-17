@@ -13,6 +13,8 @@ import type {
     Talisman,
 } from '../types/wilds';
 
+import { analyserDescriptionTalent } from './statsParser';
+
 /** Mappe une arme brute de l'API vers le type Arme du domaine français. */
 export function mapperArme(w: WeaponAPI): Arme {
     return {
