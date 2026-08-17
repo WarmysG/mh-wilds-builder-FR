@@ -2,7 +2,7 @@
 
 > **Dépôt source :** `WarmysG/mh-wilds-builder-FR`  
 > **Branche auditée :** `main`  
-> **Objectif principal :** diagnostiquer pourquoi les talents sélectionnés ne modifient pas les statistiques calculées et fournir un plan de correction vérifiable.
+> **Objectif principal :** diagnostiquer de la base du code, de sa fiabilité et de son optimisation avant poursuite du projet. Des milliers de lignes supplémentaires sont prévues .
 
 ## 1. Contexte et symptôme
 
@@ -229,6 +229,7 @@ Le rapport final doit fournir :
 6. **Cas restant volontairement non pris en charge**, s’il y en a ;
 7. une confirmation que la modification d’une pièce, d’un talisman ou d’un joyau entraîne bien une mise à jour des talents et des statistiques visibles.
 8. **Optimisation du code** meilleure optimsation possible pour une base solide et propre en vue d'un nombreux nombres de lignes de données à ajouter entre 2000 et 5000 lignes et d'un déploiement et utilisation fluide sur Vercel
+9. **Transmission des instruction complètes étape par étape pour Claude Sonnet** Rédiger des instructions précises et complète pour que Claude Sonnet puisse poursuivre le projet et faire une base optimiser et solide
 
 ### Format conseillé pour chaque anomalie
 
