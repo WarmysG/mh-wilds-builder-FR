@@ -1,73 +1,104 @@
-import { useState } from 'react';
-import { useDonneesWilds } from '../hooks/useWildsAPI';
+import { useState, useMemo } from 'react';
+import { useWildsAPI } from '../hooks/useWildsAPI';
 import { useBuildState } from '../hooks/useBuildState';
-import { calculerStatsBuild } from '../utils/calculations';
-import EquipmentGrid from './EquipmentGrid';
+import { calculerStats, construireNiveauxMax } from '../utils/calculations';
+import type { SlotEquipement, Arme, Armure, Talisman, Joyau } from '../types/wilds';
+import EquipementGrille from './EquipmentGrid';
 import StatsPanel from './StatsPanel';
 import SelectionModal from './SelectionModal';
-import type { SlotEquipement } from '../types/wilds';
+import SelectionJoyauModal from './SelectionJoyauModal';
+
+type CibleJoyau = { slot: SlotEquipement; index: number; tailleMax: number } | null;
 
 /** Composant racine du builder : orchestre les données API, l'état du build,
- * l'affichage des deux panneaux (équipement / statistiques) et la modale de choix.
+ * les calculs de stats, et l'affichage des deux panneaux (équipement / stats),
+ * ainsi que les modales de sélection (équipement et joyaux).
  */
 export default function BuilderLayout() {
-    const { armes, armures, talismans, chargement, erreur } = useDonneesWilds();
-    const { build, definirPiece, retirerPiece } = useBuildState();
+    const { armes, armures, talismans, joyaux, talents, chargement, erreur } = useWildsAPI();
+    const { build, definirPiece, retirerPiece, definirJoyau, reinitialiserBuild } = useBuildState();
 
-    const [slotSelectionne, setSlotSelectionne] = useState<SlotEquipement | null>(null);
+    const [slotOuvert, setSlotOuvert] = useState<SlotEquipement | null>(null);
+    const [cibleJoyau, setCibleJoyau] = useState<CibleJoyau>(null);
 
-    const stats = calculerStatsBuild(build);
+    const niveauxMax = useMemo(() => construireNiveauxMax(talents), [talents]);
+    const stats = useMemo(() => calculerStats(build, niveauxMax), [build, niveauxMax]);
 
-    function ouvrirSelection(slot: SlotEquipement) {
-        setSlotSelectionne(slot);
+    function gererSelectionEquipement(piece: Arme | Armure | Talisman) {
+        if (slotOuvert) {
+            definirPiece(slotOuvert, piece);
+            setSlotOuvert(null);
+        }
     }
 
-    function fermerSelection() {
-        setSlotSelectionne(null);
+    function gererSelectionJoyau(joyau: Joyau) {
+        if (cibleJoyau) {
+            definirJoyau(cibleJoyau.slot, cibleJoyau.index, joyau);
+            setCibleJoyau(null);
+        }
     }
 
     if (chargement) {
         return (
-            <div className="flex items-center justify-center min-h-screen text-xl">
-            Chargement des données Monster Hunter Wilds...
+            <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+            <p className="text-xl">Chargement des données...</p>
             </div>
         );
     }
 
     if (erreur) {
         return (
-            <div className="flex items-center justify-center min-h-screen text-xl text-red-500">
-            Erreur de chargement : {erreur}
+            <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+            <p className="text-xl text-red-400">Erreur : {erreur}</p>
             </div>
         );
     }
 
     return (
         <div className="min-h-screen bg-gray-900 text-white p-4">
-        <h1 className="text-3xl font-bold text-center mb-6">
-        Builder Monster Hunter Wilds
-        </h1>
+        <div className="max-w-6xl mx-auto">
+        <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold">Builder Monster Hunter Wilds</h1>
+        <button
+        onClick={reinitialiserBuild}
+        className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded transition"
+        >
+        Réinitialiser
+        </button>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <EquipmentGrid
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <EquipementGrille
         build={build}
-        onSlotClick={ouvrirSelection}
-        onSlotClear={retirerPiece}
+        onSlotClick={(slot) => setSlotOuvert(slot)}
+        onSlotClear={(slot) => retirerPiece(slot)}
+        onJoyauSlotClick={(slot, index, tailleMax) =>
+            setCibleJoyau({ slot, index, tailleMax })
+        }
+        onRetirerJoyau={(slot, index) => definirJoyau(slot, index, null)}
         />
         <StatsPanel stats={stats} />
         </div>
+        </div>
 
-        {slotSelectionne && (
+        {slotOuvert && (
             <SelectionModal
-            slot={slotSelectionne}
-            armes={armes.donnees}
-            armures={armures.donnees}
-            talismans={talismans.donnees}
-            onSelect={(piece) => {
-                definirPiece(slotSelectionne, piece);
-                fermerSelection();
-            }}
-            onClose={fermerSelection}
+            slot={slotOuvert}
+            armes={armes}
+            armures={armures}
+            talismans={talismans}
+            onSelect={gererSelectionEquipement}
+            onClose={() => setSlotOuvert(null)}
+            />
+        )}
+
+        {cibleJoyau && (
+            <SelectionJoyauModal
+            slot={cibleJoyau.slot}
+            tailleMax={cibleJoyau.tailleMax}
+            joyaux={joyaux}
+            onSelect={gererSelectionJoyau}
+            onClose={() => setCibleJoyau(null)}
             />
         )}
         </div>

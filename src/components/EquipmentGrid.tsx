@@ -1,9 +1,12 @@
 import type { EtatBuild, SlotEquipement } from '../types/wilds';
+import SelectionJoyauxSlot from './SelectionJoyauxSlot';
 
 interface Props {
     build: EtatBuild;
     onSlotClick: (slot: SlotEquipement) => void;
     onSlotClear: (slot: SlotEquipement) => void;
+    onJoyauSlotClick: (slot: SlotEquipement, index: number, tailleMax: number) => void;
+    onRetirerJoyau: (slot: SlotEquipement, index: number) => void;
 }
 
 const LIBELLES_SLOTS: Record<SlotEquipement, string> = {
@@ -17,38 +20,40 @@ const LIBELLES_SLOTS: Record<SlotEquipement, string> = {
 };
 
 const ORDRE_SLOTS: SlotEquipement[] = [
-    'arme',
-'casque',
-'torse',
-'bras',
-'taille',
-'jambes',
-'talisman',
+    'arme', 'casque', 'torse', 'bras', 'taille', 'jambes', 'talisman',
 ];
 
-/** Affiche les 7 emplacements d'équipement du build. Chaque slot ouvre la modale
- * de sélection au clic, ou peut être vidé via le bouton de suppression.
- */
-export default function EquipmentGrid({ build, onSlotClick, onSlotClear }: Props) {
+export default function EquipementGrille({
+    build,
+    onSlotClick,
+    onSlotClear,
+    onJoyauSlotClick,
+    onRetirerJoyau,
+}: Props) {
     return (
         <div className="bg-gray-800 rounded-lg p-4">
         <h2 className="text-xl font-semibold mb-4">Équipement</h2>
         <div className="space-y-2">
         {ORDRE_SLOTS.map((slot) => {
-            const piece = build[slot];
+            const { equipement, joyaux } = build[slot];
+            // 'emplacements' n'existe pas sur Talisman
+            const emplacements = equipement && 'emplacements' in equipement
+            ? equipement.emplacements
+            : [];
+
             return (
+                <div key={slot}>
                 <div
-                key={slot}
                 className="flex items-center justify-between bg-gray-700 rounded p-3 hover:bg-gray-600 cursor-pointer transition"
                 onClick={() => onSlotClick(slot)}
                 >
                 <div>
                 <span className="font-medium">{LIBELLES_SLOTS[slot]}</span>
                 <span className="ml-3 text-gray-300">
-                {piece ? `— ${piece.nom}` : 'Aucun équipement sélectionné'}
+                {equipement ? `— ${equipement.nom}` : 'Aucun équipement sélectionné'}
                 </span>
                 </div>
-                {piece && (
+                {equipement && (
                     <button
                     className="text-red-400 hover:text-red-300 px-2"
                     onClick={(e) => {
@@ -59,6 +64,18 @@ export default function EquipmentGrid({ build, onSlotClick, onSlotClear }: Props
                     >
                     ✕
                     </button>
+                )}
+                </div>
+
+                {equipement && emplacements.length > 0 && (
+                    <SelectionJoyauxSlot
+                    emplacements={emplacements}
+                    joyauxInseres={joyaux}
+                    onSlotClick={(index, tailleMax) =>
+                        onJoyauSlotClick(slot, index, tailleMax)
+                    }
+                    onRetirerJoyau={(index) => onRetirerJoyau(slot, index)}
+                    />
                 )}
                 </div>
             );

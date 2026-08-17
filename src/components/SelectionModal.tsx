@@ -14,12 +14,15 @@ interface Props {
 
 const SLOTS_ARMURE: SlotEquipement[] = ['casque', 'torse', 'bras', 'taille', 'jambes'];
 
-const LIBELLE_EMPLACEMENT_ARMURE: Record<string, string> = {
-    casque: 'Tête',
-    torse: 'Torse',
-    bras: 'Bras',
-    taille: 'Taille',
-    jambes: 'Jambes',
+/** Correspondance entre nos slots FR et la valeur 'kind' brute renvoyée par l'API
+ * (a priori en anglais : "head", "chest", "arms", "waist", "legs").
+ */
+const KIND_ARMURE_PAR_SLOT: Record<string, string> = {
+    casque: 'head',
+    torse: 'chest',
+    bras: 'arms',
+    taille: 'waist',
+    jambes: 'legs',
 };
 
 /** Modale de sélection d'équipement. Filtre automatiquement la liste selon le slot
@@ -43,8 +46,8 @@ export default function SelectionModal({
     } else if (slot === 'talisman') {
         liste = talismans;
     } else if (SLOTS_ARMURE.includes(slot)) {
-        const emplacementAttendu = LIBELLE_EMPLACEMENT_ARMURE[slot];
-        liste = armures.filter((a) => a.emplacement === emplacementAttendu);
+        const kindAttendu = KIND_ARMURE_PAR_SLOT[slot];
+        liste = armures.filter((a) => a.emplacement === kindAttendu);
     }
 
     const listeFiltree = liste.filter((piece) =>

@@ -1,112 +1,111 @@
 import { useState, useEffect } from 'react';
-import type {
-    WeaponAPI,
-    ArmorAPI,
-    CharmAPI,
-    SkillAPI,
-    Arme,
-    Armure,
-    Talisman,
-    Talent,
-} from '../types/wilds';
-import { mapperArme, mapperArmure, mapperTalisman, mapperTalent } from '../utils/mappage';
+import type { Arme, Armure, Talisman, Joyau, Skill } from '../types/wilds';
+import {
+    mapperArme,
+    mapperArmure,
+    mapperTalisman,
+    mapperDecoration,
+    mapperSkill,
+    resoudreNomsTalents,
+} from '../utils/mappage';
+import type { WeaponAPI, ArmorAPI, CharmAPI, DecorationAPI, SkillAPI } from '../types/wilds';
 
 const BASE_URL = 'https://wilds.mhdb.io/fr';
 
-interface EtatChargement<T> {
-    donnees: T[];
+interface DonneesWilds {
+    armes: Arme[];
+    armures: Armure[];
+    talismans: Talisman[];
+    joyaux: Joyau[];
+    talents: Skill[];
     chargement: boolean;
     erreur: string | null;
 }
 
-/** Hook générique de fetch pour un endpoint de l'API Wilds.
- * La racine des réponses est toujours un tableau direct (validé le 15/08/2026),
- * jamais un objet enveloppant du type { weapons: [...] }.
+/** Récupère toutes les données nécessaires au builder depuis l'API Wilds (en français).
+ * Effectue les 5 requêtes en parallèle, mappe chaque réponse vers le domaine français,
+ * puis résout les noms de talents manquants (armes/talismans) via la table des Skills.
  */
-function useEndpointAPI<TBrut, TDomaine>(
-    endpoint: string,
-    mapper: (brut: TBrut) => TDomaine | null
-): EtatChargement<TDomaine> {
-    const [donnees, setDonnees] = useState<TDomaine[]>([]);
-    const [chargement, setChargement] = useState<boolean>(true);
+export function useWildsAPI(): DonneesWilds {
+    const [armes, setArmes] = useState<Arme[]>([]);
+    const [armures, setArmures] = useState<Armure[]>([]);
+    const [talismans, setTalismans] = useState<Talisman[]>([]);
+    const [joyaux, setJoyaux] = useState<Joyau[]>([]);
+    const [talents, setTalents] = useState<Skill[]>([]);
+    const [chargement, setChargement] = useState(true);
     const [erreur, setErreur] = useState<string | null>(null);
 
     useEffect(() => {
         let annule = false;
 
-        async function recuperer() {
-            setChargement(true);
-            setErreur(null);
+        async function chargerDonnees() {
             try {
-                const reponse = await fetch(`${BASE_URL}/${endpoint}`);
-                if (!reponse.ok) {
-                    throw new Error(`Erreur HTTP ${reponse.status} sur /${endpoint}`);
+                setChargement(true);
+
+                const [resArmes, resArmures, resTalismans, resJoyaux, resTalents] =
+                await Promise.all([
+                    fetch(`${BASE_URL}/weapons`),
+                                  fetch(`${BASE_URL}/armor`),
+                                  fetch(`${BASE_URL}/charms`),
+                                  fetch(`${BASE_URL}/decorations`),
+                                  fetch(`${BASE_URL}/skills`),
+                ]);
+
+                if (!resArmes.ok || !resArmures.ok || !resTalismans.ok || !resJoyaux.ok || !resTalents.ok) {
+                    throw new Error('Une des requêtes API a échoué.');
                 }
-                const brut: TBrut[] = await reponse.json();
-                if (!annule) {
-                    const mappees = brut
-                    .map(mapper)
-                    .filter((item): item is TDomaine => item !== null);
-                    setDonnees(mappees);
-                }
+
+                const [dataArmes, dataArmures, dataTalismans, dataJoyaux, dataTalents]: [
+                    WeaponAPI[],
+                    ArmorAPI[],
+                    CharmAPI[],
+                    DecorationAPI[],
+                    SkillAPI[]
+                ] = await Promise.all([
+                    resArmes.json(),
+                                      resArmures.json(),
+                                      resTalismans.json(),
+                                      resJoyaux.json(),
+                                      resTalents.json(),
+                ]);
+
+                if (annule) return;
+
+                const talentsMappes = dataTalents.map(mapperSkill);
+                const talentsParId = new Map<number, string>(
+                    talentsMappes.map((t) => [t.id, t.nom])
+                );
+
+                const armesMappees = resoudreNomsTalents(
+                    dataArmes.map(mapperArme),
+                                                         talentsParId
+                );
+                const talismansMappes = resoudreNomsTalents(
+                    dataTalismans.map(mapperTalisman),
+                                                            talentsParId
+                );
+
+                setArmes(armesMappees);
+                setArmures(dataArmures.map(mapperArmure));
+                setTalismans(talismansMappes);
+                setJoyaux(dataJoyaux.map(mapperDecoration));
+                setTalents(talentsMappes);
+                setErreur(null);
             } catch (e) {
                 if (!annule) {
-                    setErreur(e instanceof Error ? e.message : 'Erreur inconnue');
+                    setErreur(e instanceof Error ? e.message : 'Erreur inconnue lors du chargement.');
                 }
             } finally {
-                if (!annule) {
-                    setChargement(false);
-                }
+                if (!annule) setChargement(false);
             }
         }
 
-        recuperer();
+        chargerDonnees();
+
         return () => {
             annule = true;
         };
-    }, [endpoint]);
+    }, []);
 
-    return { donnees, chargement, erreur };
-}
-
-/** Récupère toutes les armes traduites en français depuis /fr/weapons. */
-export function useArmes(): EtatChargement<Arme> {
-    return useEndpointAPI<WeaponAPI, Arme>('weapons', mapperArme);
-}
-
-/** Récupère toutes les armures traduites en français depuis /fr/armor
- * (endpoint réel singulier, confirmé par test direct le 15/08/2026).
- */
-export function useArmures(): EtatChargement<Armure> {
-    return useEndpointAPI<ArmorAPI, Armure>('armor', mapperArmure);
-}
-
-/** Récupère tous les talismans depuis /fr/charms.
- * Ne garde que le premier rang de chaque talisman (mapperTalisman renvoie null
- * si aucun rang n'existe, filtré automatiquement).
- */
-export function useTalismans(): EtatChargement<Talisman> {
-    return useEndpointAPI<CharmAPI, Talisman>('charms', mapperTalisman);
-}
-
-/** Récupère tous les talents depuis /fr/skills. */
-export function useTalents(): EtatChargement<Talent> {
-    return useEndpointAPI<SkillAPI, Talent>('skills', mapperTalent);
-}
-
-/** Hook combiné pratique pour charger toutes les données nécessaires au builder
- * en une seule fois (utile dans App.tsx).
- */
-export function useDonneesWilds() {
-    const armes = useArmes();
-    const armures = useArmures();
-    const talismans = useTalismans();
-    const talents = useTalents();
-
-    const chargement =
-    armes.chargement || armures.chargement || talismans.chargement || talents.chargement;
-
-    const erreur = armes.erreur || armures.erreur || talismans.erreur || talents.erreur || null;
-
-    return { armes, armures, talismans, talents, chargement, erreur };
+    return { armes, armures, talismans, joyaux, talents, chargement, erreur };
 }

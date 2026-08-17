@@ -3,94 +3,45 @@ import type {
     Armure,
     ArmorAPI,
     CharmAPI,
+    DecorationAPI,
+    Joyau,
+    Skill,
     SkillAPI,
-    SkillWrapperAPI,
     Talent,
     TypeArme,
     WeaponAPI,
     Talisman,
 } from '../types/wilds';
 
-export const KIND_ARME_FR: Record<string, TypeArme> = {
-    'bow': 'Arc',
-    'light-bowgun': 'Arbalète légère',
-    'heavy-bowgun': 'Arbalète lourde',
-    'long-sword': 'Épée longue',
-    'great-sword': 'Grande épée',
-    'sword-shield': 'Épée et bouclier',
-    'dual-blades': 'Lames doubles',
-    'lance': 'Lance',
-    'gunlance': 'Lancecanon',
-    'hammer': 'Marteau',
-    'hunting-horn': 'Corne de chasse',
-    'switch-axe': 'Morpho-hache',
-    'charge-blade': 'Volto-hache',
-    'insect-glaive': 'Insectoglaive',
-};
-
-export const KIND_ARMURE_FR: Record<string, string> = {
-    head: 'Tête',
-    chest: 'Torse',
-    arms: 'Bras',
-    waist: 'Taille',
-    legs: 'Jambes',
-};
-
-export const RANG_FR: Record<string, string> = {
-    low: 'Bas',
-    high: 'Élevé',
-    master: 'Maître', // Non observé dans l'échantillon du 15/08/2026, gardé par précaution
-};
-
-export const RESISTANCE_FR = {
-    fire: 'feu',
-    water: 'eau',
-    ice: 'glace',
-    thunder: 'tonnerre',
-    dragon: 'dragon',
-} as const;
-
-export const KIND_TALENT_FR: Record<string, string> = {
-    armor: 'armure',
-    weapon: 'arme',
-    set: 'ensemble',
-    group: 'groupe',
-};
-
-/** Convertit un wrapper de talent brut (venant d'une arme, armure ou talisman)
- * vers le type Talent du domaine français.
- */
-function talentDepuisWrapper(t: SkillWrapperAPI): Talent {
+/** Mappe une arme brute de l'API vers le type Arme du domaine français. */
+export function mapperArme(w: WeaponAPI): Arme {
     return {
-        id: t.skill.id,
-        nom: t.skill.name ?? 'Talent inconnu',
-        description: t.description,
-        niveau: t.level,
-        piecesRequises: t.setPiecesRequired,
+        id: w.id,
+        nom: w.name,
+        type: w.kind as TypeArme,
+        rarete: w.rarity,
+        degatsAffiches: w.damage.display,
+        affinite: 0, // Non fourni par l'API weapons actuellement
+        defenseBonus: 0, // Non fourni par l'API weapons actuellement
+        emplacements: w.slots,
+        talents: w.skills.map((s) => ({
+            id: s.skill.id,
+            nom: '',
+            niveau: s.level,
+        })),
     };
 }
 
-export function mapperArme(a: WeaponAPI): Arme {
-    return {
-        id: a.id,
-        nom: a.name,
-        type: KIND_ARME_FR[a.kind] ?? a.kind,
-        rarete: a.rarity,
-        degatsBruts: a.damage.raw,
-        degatsAffiches: a.damage.display,
-        affinite: a.affinity,
-        defenseBonus: a.defenseBonus,
-        emplacements: a.slots,
-        talents: a.skills.map(talentDepuisWrapper),
-    };
-}
-
+/** Mappe une armure brute de l'API vers le type Armure du domaine français. */
 export function mapperArmure(a: ArmorAPI): Armure {
+    const talentsNormaux = a.skills.filter((s) => s.skill.kind === 'armor');
+    const bonusDeSet = a.skills.filter((s) => s.skill.kind !== 'armor');
+
     return {
         id: a.id,
         nom: a.name,
-        emplacement: KIND_ARMURE_FR[a.kind] ?? a.kind,
-        rang: RANG_FR[a.rank] ?? a.rank,
+        description: a.description,
+        emplacement: a.kind,
         rarete: a.rarity,
         defenseBase: a.defense.base,
         defenseMax: a.defense.max,
@@ -101,37 +52,89 @@ export function mapperArmure(a: ArmorAPI): Armure {
             tonnerre: a.resistances.thunder,
             dragon: a.resistances.dragon,
         },
-        talents: a.skills.map(talentDepuisWrapper),
-        set: { id: a.armorSet.id, nom: a.armorSet.name },
+        emplacements: a.slots,
+        talents: talentsNormaux.map((s) => ({
+            id: s.skill.id,
+            nom: s.skill.name ?? '',
+            niveau: s.level,
+        })),
+        bonusEnsemble: bonusDeSet.map((s) => ({
+            id: s.skill.id,
+            nom: s.name ?? s.skill.name ?? '',
+            niveau: s.setPiecesRequired ?? s.level,
+        })),
+        ensemble: a.armorSet
+        ? { id: a.armorSet.id, nom: a.armorSet.name }
+        : undefined,
     };
 }
 
-/** Ne garde que le premier rang (niveau 1) du talisman.
- * Retourne null si le talisman n'a aucun rang (cas non observé mais possible).
+/** Mappe un talisman brut de l'API vers le type Talisman du domaine français.
+ * Ne conserve que le premier rang (niveau de base) du talisman.
+ * Les noms des talents seront résolus ensuite via resoudreNomsTalents.
  */
-export function mapperTalisman(c: CharmAPI): Talisman | null {
-    const r = c.ranks[0];
-    if (!r) return null;
+export function mapperTalisman(c: CharmAPI): Talisman {
+    const premierRang = c.ranks?.[0];
     return {
         id: c.id,
-        nom: r.name,
-        niveau: r.level,
-        rarete: r.rarity,
-        talents: r.skills.map(talentDepuisWrapper),
+        nom: premierRang?.name ?? 'Talisman inconnu',
+        niveau: premierRang?.level ?? 1,
+        talents: (premierRang?.skills ?? []).map((s) => ({
+            id: s.skill.id,
+            nom: '', // sera résolu ensuite via resoudreNomsTalents
+            niveau: s.level,
+        })),
     };
 }
 
-
-/** Ne garde que le premier rang du talent pour l'affichage de base.
- * Retourne un Talent avec niveau 0 si aucun rang n'existe (cas non observé).
+/** Mappe un joyau (décoration) brut de l'API vers le type Joyau du domaine français.
+ * Un joyau peut conférer plusieurs talents à la fois (ex: "Joyau châtiment/artisanat").
  */
-export function mapperTalent(s: SkillAPI): Talent {
-    const r = s.ranks[0];
+export function mapperDecoration(d: DecorationAPI): Joyau {
+    return {
+        id: d.id,
+        nom: d.name,
+        taille: d.slot,
+        kind: d.kind,
+        talents: d.skills.map((s) => ({
+            id: s.skill.id,
+            nom: s.skill.name,
+            niveau: s.level,
+        })),
+    };
+}
+
+/** Alias : le hook useJoyauxAPI attend une fonction nommée mapperJoyau. */
+export const mapperJoyau = mapperDecoration;
+
+/** Mappe la réponse brute de l'API (/fr/skills) vers le type Skill du domaine français.
+ * Conserve tous les rangs (contrairement aux talents d'équipement qui n'en ont qu'un).
+ */
+export function mapperSkill(s: SkillAPI): Skill {
     return {
         id: s.id,
         nom: s.name,
-        description: s.description ?? r?.description ?? '',
-        niveau: r?.level ?? 0,
-        piecesRequises: r?.setPiecesRequired ?? null,
+        description: s.description ?? '',
+        ranks: s.ranks.map((r) => ({
+            niveau: r.level,
+            description: r.description,
+            effets: analyserDescriptionTalent(r.description),
+        })),
     };
+}
+/** Complète le nom des talents d'une liste de pièces (armes ou talismans)
+ * en le résolvant depuis la table des Skills (id → nom).
+ * Nécessaire car /fr/weapons et /fr/charms ne renvoient que skill.id, pas skill.name.
+ */
+export function resoudreNomsTalents<T extends { talents: Talent[] }>(
+    pieces: T[],
+    talentsParId: Map<number, string>
+): T[] {
+    return pieces.map((piece) => ({
+        ...piece,
+        talents: piece.talents.map((t) => ({
+            ...t,
+            nom: talentsParId.get(t.id) ?? t.nom,
+        })),
+    }));
 }

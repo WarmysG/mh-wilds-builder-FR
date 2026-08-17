@@ -26,6 +26,12 @@ export default function StatsPanel({ stats }: Props) {
         <span className="font-bold">{stats.attaque}</span>
         </div>
         <div className="flex justify-between">
+        <span>🎯 Affinité</span>
+        <span className={`font-bold ${stats.affinite >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+        {stats.affinite > 0 ? '+' : ''}{stats.affinite}%
+        </span>
+        </div>
+        <div className="flex justify-between">
         <span>🛡️ Défense</span>
         <span className="font-bold">{stats.defense}</span>
         </div>

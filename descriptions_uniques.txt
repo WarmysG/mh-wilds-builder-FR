@@ -1,0 +1,414 @@
+(Au début de la quête) Résonance proche et Résonance éloignée alternent, augmentant l'attaque ou l'affinité lorsque les conditions sont remplies.
+10 % de chances d'annuler la perte de tranchant.
+100 % de chances d'empêcher vos attaques d'être déviées, attaque +15 % sur les cibles dures.
+100 % de chances d'empêcher vos attaques d'être déviées, attaque +30 % sur les cibles dures.
+25 % de chances d'annuler la perte de tranchant.
+50 % de chances d'annuler la perte de tranchant.
+50 % de chances d'empêcher vos attaques d'être déviées, attaque +10 % sur les cibles dures.
+80 % de chances d'annuler la perte de tranchant lorsqu'il est actif.
+Accumulation explosion +10 % Accumulation explosion +20
+Accumulation explosion +20 % Accumulation explosion +50
+Accumulation explosion +5 % Accumulation explosion +10
+Accumulation paralysie +10 % Accumulation paralysie +20
+Accumulation paralysie +20 % Accumulation paralysie +50
+Accumulation paralysie +5 % Accumulation paralysie +10
+Accumulation poison +10 % Accumulation poison +20
+Accumulation poison +20 % Accumulation poison +50
+Accumulation poison +5 % Accumulation poison +10
+Accumulation sommeil +10 % Accumulation sommeil +20
+Accumulation sommeil +20 % Accumulation sommeil +50
+Accumulation sommeil +5 % Accumulation sommeil +10
+Accélère grandement la guérison après avoir contracté la Furie. Augmente ensuite l'affinité de 10 %.
+Accélère la guérison après avoir contracté la Furie. Augmente ensuite l'affinité de 6 %.
+Accélère la récupération d'endurance et de la jauge rouge près des cristaux de wylait.
+Accélère le rechargement (obus/fioles). Capacité lancecanon +1. Volto-hache : 5 fioles (jauge jaune).
+Accélère le rechargement des obus et des fioles.
+Accélère légèrement la guérison après avoir contracté la Furie. Augmente ensuite l'affinité de 3 %.
+Actions spéciales renforcées. Les Drive Impacts peuvent neutraliser. Après une Neutralisation, augmente la puissance.
+Active l'effet.
+Active l'effet. (Ne se cumule pas avec Carbonisateur, mais inflige des dégâts de feu supplémentaires.)
+Active l'effet. (Nécessite un temps de rechargement, mais les attaques chargées vous infligent toujours des dégâts.)
+Affinité +10 % Perte d'endurance -30 % lorsqu'il est actif.
+Affinité +10 % lorsqu'il est actif.
+Affinité +10 % pour les attaques qui touchent un point faible et bonus parties blessées de +5 %.
+Affinité +100 %
+Affinité +12 %
+Affinité +15 % pour les attaques qui touchent un point faible et bonus parties blessées de +10 %.
+Affinité +16 %
+Affinité +20 %
+Affinité +20 % Perte d'endurance -30 % lorsqu'il est actif.
+Affinité +20 % lorsqu'il est actif.
+Affinité +20 % pour les attaques qui touchent un point faible et bonus parties blessées de +15 %.
+Affinité +3 % lorsque vous êtes mouillé et +7 % en cas de fléau-bulles.
+Affinité +30 % Perte d'endurance -50 % lorsqu'il est actif.
+Affinité +30 % lorsqu'il est actif.
+Affinité +30 % pour les attaques qui touchent un point faible et bonus parties blessées de +20 %.
+Affinité +4 %
+Affinité +40 % Perte d'endurance -50 % lorsqu'il est actif.
+Affinité +5 % pour les attaques qui touchent un point faible et bonus parties blessées de +3 %.
+Affinité +50 %
+Affinité +50 % Perte d'endurance -50 % lorsqu'il est actif.
+Affinité +6 % lorsque vous êtes mouillé et +14 % en cas de fléau-bulles.
+Affinité +75 %
+Affinité +8 %
+Affinité +9 % lorsque vous êtes mouillé et +21 % en cas de fléau-bulles.
+Ajoute en plus un champignon par collecte.
+Ajoute en plus un fruit, une noix ou une graine supplémentaire par collecte.
+Ajoute en plus un insecte par collecte.
+Ajoute en plus un objet supplémentaire depuis les gisements miniers.
+Ajoute en plus un objet supplémentaire en collectant des objets spéciaux.
+Améliore l'efficacité des attaques et objets flash.
+Améliore la pêche, la cuisson au gril et les capacités de transport.
+Annule aussi les effets des vagues.
+Annule jusqu'aux petites secousses et réduit grandement les effets des grandes secousses.
+Annule la perte de tranchant pendant 30 s après activation.
+Annule la perte de tranchant pendant 60 s après activation.
+Annule la perte de tranchant pendant 90 s après activation.
+Annule les dégâts environnementaux.
+Annule les effets des ruisseaux boueux et le ralentissement dans l'eau et la boue huileuse. Réduit le ralentissement par l'huile de dragon.
+Annule les effets du froid et de la chaleur.
+Annule les fléaux élémentaires.
+Annule les petites bourrasques et réduit de moitié les effets des grandes bourrasques.
+Annule les petites et grandes bourrasques et réduit de moitié les effets des bourrasques draconiques.
+Annule les petits et grands rugissements.
+Annule les petits rugissements et réduit les effets des grands rugissements.
+Annule les repoussements durant les sauts.
+Annule les très petites secousses et réduit de moitié les effets des petites secousses.
+Annule toutes les bourrasques.
+Annule toutes les secousses.
+Attaque +10 % et défense physique +100 lorsqu'il est actif.
+Attaque +10 % lorsqu'il est actif.
+Attaque +10 et affinité +10 % contre les grands monstres empoisonnés ou paralysés.
+Attaque +10 lorsqu'il est actif.
+Attaque +12 et affinité +15 % contre les grands monstres empoisonnés ou paralysés.
+Attaque +12 et affinité +7 % lorsqu'il est actif.
+Attaque +15 % lorsqu'il est actif.
+Attaque +15 et affinité +20 % contre les grands monstres empoisonnés ou paralysés.
+Attaque +15 lorsqu'il est actif.
+Attaque +15 lorsqu'il est actif. Augmente modérément la durée de l'effet.
+Attaque +16 et affinité +10 % lorsqu'il est actif.
+Attaque +2 % Attaque +8
+Attaque +20 et affinité +15 % lorsqu'il est actif.
+Attaque +20 lorsqu'il est actif.
+Attaque +25 lorsqu'il est actif.
+Attaque +25 lorsqu'il est actif. Augmente la durée de l'effet.
+Attaque +3
+Attaque +3 lorsqu'il est actif.
+Attaque +30 % et bonus de défense annulés lorsqu'il est actif.
+Attaque +30 lorsqu'il est actif.
+Attaque +4 % Attaque +9
+Attaque +4 et affinité +3 % lorsqu'il est actif.
+Attaque +5
+Attaque +5 % et défense physique +100 lorsqu'il est actif.
+Attaque +5 % et défense physique +50 lorsqu'il est actif.
+Attaque +5 % lorsqu'il est actif.
+Attaque +5 lorsqu'il est actif.
+Attaque +6 contre les grands monstres empoisonnés ou paralysés.
+Attaque +6 lorsqu'il est actif.
+Attaque +7
+Attaque +8 et affinité +5 % contre les grands monstres empoisonnés ou paralysés.
+Attaque +8 et affinité +5 % lorsqu'il est actif.
+Attaque Dragon +10 % Attaque Dragon +50
+Attaque Dragon +20 % Attaque Dragon +60
+Attaque Dragon +40
+Attaque Eau +10 % Attaque Eau +50
+Attaque Eau +20 % Attaque Eau +60
+Attaque Eau +40
+Attaque Feu +10 % Attaque Feu +50
+Attaque Feu +20 % Attaque Feu +60
+Attaque Feu +40
+Attaque Foudre +10 % Attaque Foudre +50
+Attaque Foudre +20 % Attaque Foudre +60
+Attaque Foudre +40
+Attaque Glace +10 % Attaque Glace +50
+Attaque Glace +20 % Attaque Glace +60
+Attaque Glace +40
+Attaques sautées +10 %
+Attire davantage l'attention d'un monstre quand vous l'attaquez.
+Augmente davantage le bonus de dégâts de foudre et prolonge modérément la durée d'augmentation de l'affinité.
+Augmente de 100 % le délai jusqu'à la réduction de votre endurance maximum.
+Augmente de 50 % le délai jusqu'à la réduction de votre endurance maximum.
+Augmente encore la durée du talent Vendetta et confère Attaque +18 quand Vendetta est actif.
+Augmente encore plus la durée des effets des mélodies.
+Augmente encore plus les dégâts draconiques additionnels et augmente grandement l'attaque dragon.
+Augmente grandement l'attaque à la fin de l'état Toile, du fléau-givre, d'une immobilisation ou d'un Duel de force.
+Augmente grandement l'attaque élémentaire et les afflictions des attaques chargées.
+Augmente grandement la distance d'esquive.
+Augmente grandement la durée pendant laquelle les armes sont chargés.
+Augmente grandement la défense et la résistance temporairement quand vous utilisez un outil de survie.
+Augmente grandement la fenêtre d'invulnérabilité.
+Augmente grandement la portée et améliore la puissance des attaques réalisées à bonne distance.
+Augmente grandement la puissance des attaques et la vitesse du Feu de wyverne. Attaque feu du Bombardement +90.
+Augmente grandement la récupération.
+Augmente grandement la vitesse de rech. du fusarbalète et la puissance du tir si les conditions sont remplies.
+Augmente grandement la vitesse de rengainage.
+Augmente grandement la vitesse des repas.
+Augmente grandement les afflictions infligées par des coups critiques.
+Augmente grandement les dégâts élémentaires lorsqu'il est actif.
+Augmente l'attaque et la défense après un évanouissement pendant une quête. *Deux fois max.
+Augmente l'attaque et la défense du Palico de 10 %.
+Augmente l'attaque et la défense du Palico de 15 %.
+Augmente l'attaque et la défense du Palico de 20 %.
+Augmente l'attaque et la défense du Palico de 25 %.
+Augmente l'attaque et la défense du Palico de 5 %.
+Augmente l'attaque quand vous êtes victime d'une affliction.
+Augmente l'attaque à la fin de l'état Toile, du fléau-givre, d'une immobilisation ou d'un Duel de force.
+Augmente l'attaque élémentaire et les afflictions des attaques chargées.
+Augmente l'attaque élémentaire lorsque les grands monstres sont enragés.
+Augmente l'attaque, réduit la défense et permet de survivre à un coup fatal, puis augmente défense et résistance.
+Augmente l'effet de Résonance I, du talent d'arme Bouclier synthétique ou de Programme synergique.
+Augmente la distance d'esquive.
+Augmente la durée de Force latente.
+Augmente la durée des effets des mélodies et les chances de récupérer plus de vie avec les mélodies de soin.
+Augmente la durée du talent Vendetta et confère Attaque +8 quand Vendetta est actif. 
+Augmente la durée pendant laquelle les armes sont chargées.
+Augmente la fenêtre d'invulnérabilité.
+Augmente la portée.
+Augmente la puissance d'attaque et l'affinité des munitions sous certaines conditions.
+Augmente la puissance des attaques et la vitesse du Feu de wyverne. Attaque feu du Bombardement +60.
+Augmente la puissance des munitions et flèches indiquées.
+Augmente la quantité de miel obtenu aux points de collecte.
+Augmente la vitesse de collecte et empêche les attaques de vous repousser pendant la collecte ou le dépeçage.
+Augmente la vitesse de déplacement en position accroupie. Les monstres vous repèrent moins facilement.
+Augmente la vitesse de rechargement du fusarbalète et la puissance du tir si les conditions sont remplies.
+Augmente la vitesse de rengainage.
+Augmente la vitesse des repas.
+Augmente le taux de remplissage de la jauge et réduit le temps de charge de 15 %.
+Augmente les afflictions infligées par des coups critiques.
+Augmente les chances de trouver des points de collecte rare.
+Augmente les dégâts contre les parties et les dégâts infligés de 10 % si les conditions sont remplies.
+Augmente les dégâts contre les parties et les dégâts infligés de 20 % si les conditions sont remplies.
+Augmente les dégâts contre les parties et les dégâts infligés de 30 % si les conditions sont remplies.
+Augmente les dégâts de feu supplémentaires après une attaque réussie.
+Augmente les dégâts draconiques additionnels et l'attaque dragon.
+Augmente les dégâts élémentaires lorsqu'il est actif.
+Augmente légèrement l'attaque élémentaire et les afflictions des attaques chargées.
+Augmente légèrement la distance d'esquive.
+Augmente légèrement la fenêtre d'invulnérabilité.
+Augmente légèrement la portée.
+Augmente légèrement la puissance d'attaque et l'affinité des munitions sous certaines conditions.
+Augmente légèrement la puissance des munitions et flèches indiquées.
+Augmente légèrement la récupération.
+Augmente légèrement la vitesse de rengainage.
+Augmente légèrement le taux de remplissage de la jauge et réduit le temps de charge de 5 %.
+Augmente légèrement les afflictions infligées par des coups critiques.
+Augmente légèrement les dégâts élémentaires lorsqu'il est actif.
+Augmente modérément la durée de Force latente.
+Augmente modérément la durée pendant laquelle les armes sont chargées.
+Augmente modérément la puissance d'attaque et l'affinité des munitions sous certaines conditions.
+Augmente modérément la puissance des attaques et la vitesse du Feu de wyverne. Attaque feu du Bombardement +30.
+Augmente modérément la puissance des munitions et flèches indiquées.
+Augmente modérément la récupération.
+Augmente modérément la vitesse de rech. du fusarbalète et la puissance du tir si les conditions sont remplies.
+Augmente modérément la vitesse des repas.
+Augmente modérément le taux de remplissage de la jauge et réduit le temps de charge de 10 %.
+Augmente temporairement l'affinité. Infligez assez de dégâts pour un bonus de dégâts de foudre. (Sauf certaines attaques.)
+Augmente temporairement la défense quand vous utilisez un outil de survie.
+Augmente temporairement la puissance d'attaque avec les effets qui affectent les compagnons (comme les Mélodies).
+Augmente temporairement votre affinité pendant les glissades.
+Augmente très légèrement la fenêtre d'invulnérabilité.
+Augmente également l'attaque en cas de réactivation alors que le talent est actif.
+Augmente énormément la fenêtre d'invulnérabilité.
+Chances d'activation +10 %
+Chances d'activation +25 %
+Chances d'activation +45 %
+Chances d'infliger des dégâts de feu supplémentaires après une attaque réussie.
+Confère temporairement +15 d'attaque après avoir consommé des objets tels que des steaks à point.
+Confère temporairement +30 d'attaque après avoir consommé des objets tels que des steaks à point.
+Confère une grande jauge d'endurance supplémentaire.
+Confère une jauge d'endurance supplémentaire.
+Coût d'endurance -15 %
+Coût d'endurance -30 %
+Coût d'endurance -50 %
+Coût d'endurance fixe -10 %
+Coût d'endurance fixe -20 %
+Coût d'endurance fixe -30 %
+Coût d'endurance fixe -40 %
+Coût d'endurance fixe -50 %
+Diminue grandement l'impact des attaques et réduit la perte d'endurance de 50 %.
+Diminue l'impact des attaques et réduit la perte d'endurance de 30 %.
+Diminue légèrement l'impact des attaques et réduit la perte d'endurance de 15 %.
+Double la vitesse de récupération des dégâts temporaires.
+Drain d'endurance +20 %
+Drain d'endurance +30 %
+Drain d'endurance +40 %
+Durée +10 %
+Durée +25 %
+Durée +50 %
+Durée fléaux élémentaires -50 %
+Durée fléaux élémentaires -75 %
+Durée paralysie -30 %
+Durée paralysie -60 %
+Durée sommeil -30 %
+Durée sommeil -60 %
+Durée étourdissement -30 %
+Durée étourdissement -60 %.
+Décourage grandement les monstres de vous attaquer même s'ils vous repèrent.
+Décourage les monstres de vous attaquer même s'ils vous repèrent.
+Défense +10
+Défense +10 % Défense +35 Résistances élémentaires +5
+Défense +5
+Défense +5 % Défense +10
+Défense +5 % Défense +20 Résistances élémentaires +3
+Défense +50 lorsqu'il est actif.
+Défense +8 % Défense +20 Résistances élémentaires +3
+Défense +8 % Défense +35 Résistances élémentaires +5
+Dégâts +10 % lorsque la jauge de tranchant est dans le jaune ou moins.
+Dégâts +10 % lorsque la jauge de tranchant est dans le vert ou moins.
+Dégâts +5 % lorsque la jauge de tranchant est dans le jaune ou moins.
+Dégâts des coups critiques +28 %.
+Dégâts des coups critiques +31 %.
+Dégâts des coups critiques +34 %.
+Dégâts des coups critiques +37 %.
+Dégâts des coups critiques +40 %.
+Dégâts subis -15 % lorsqu'il est actif.
+Dégâts subis -30 % lorsqu'il est actif.
+Dégâts subis -50 % lorsqu'il est actif.
+Délai de réutilisation -10 %
+Délai de réutilisation -20 %
+Délai de réutilisation -30 %
+Délai de réutilisation -40 %
+Délai de réutilisation -50 %
+Empêche la réduction de l'endurance maximum.
+Empêche les monstres de vous attaquer même s'ils vous repèrent.
+Extraire des matériaux très rares augmente grandement l'attaque (jusqu'à une certaine limite).
+Facilite grandement la création d'une blessure. Inflige aussi plus de dégâts non élémentaires.
+Facilite la création d'une blessure. Inflige aussi un peu plus de dégâts non élémentaires.
+Facilite légèrement la création d'une blessure. Inflige aussi des dégâts non élémentaires.
+Facilite modérément la création d'une blessure. Inflige aussi légèrement plus de dégâts non élémentaires.
+Facilite énormément la création d'une blessure. Inflige beaucoup plus de dégâts non élémentaires.
+Inflige des dégâts dragon additionnels en accumulant les dégâts élémentaires. Augmente légèrement l'attaque dragon.
+Inflige des dégâts supplémentaires quand le talent Vengeance est actif.
+Inflige une quantité modérée de dégâts supplémentaires quand le talent Vengeance est actif.
+L'attaque et les attaques élémentaires augmentent légèrement au premier coup, et encore plus après le cinquième coup.
+L'effet du niveau I augmente et vous gagnez une barrière temporaire qui se réactive après le temps de recharge.
+L'utilisation du talent devient possible.
+La jauge de vie continue de se régénérer jusqu'à la valeur maximale même s'il n'y a pas de portion rouge.
+La jauge de vie continue de se régénérer lentement jusqu'à la valeur maximale même s'il n'y a pas de portion rouge.
+Les attaques dégainées ont Attaque +3 et infligent des dégâts légers d'étourdissement.
+Les attaques dégainées ont Attaque +5 et infligent des dégâts moyens d'étourdissement.
+Les attaques dégainées ont Attaque +7 et infligent des dégâts importants d'étourdissement.
+Lorsqu'il est actif, augmente l'attaque élémentaire. Résistance à l'élément subi à l'activation : +8
+Lorsqu'il est actif, augmente légèrement l'attaque élémentaire. Résistance à l'élément subi à l'activation : +4.
+Lorsqu'il est actif, augmente modérément l'attaque élémentaire. Résistance à l'élément subi à l'activation : +6
+Lorsqu'il est actif, l'attaque élémentaire et les afflictions augmentent grandement.
+Lorsqu'il est actif, l'attaque élémentaire et les afflictions augmentent légèrement.
+Lorsqu'il est actif, l'attaque élémentaire et les afflictions augmentent.
+Octroie temporairement Attaque +10 après une Neutralisation ou un Duel de force réussi.
+Octroie temporairement Attaque +25 après une Neutralisation ou un Duel de force réussi.
+Pendant Chant des lumières, ajoute des objets spéciaux aux récompenses de quête. Augmente attaque et défense.
+Pendant Chant des lumières, ajoute des objets spéciaux aux récompenses. (Hors quête rejointe en cours de route.)
+Pendant Danse des fleurs, ajoute des objets spéciaux aux récompenses de quête. Augmente attaque et défense.
+Pendant Danse des fleurs, ajoute des objets spéciaux aux récompenses. (Hors quête rejointe en cours de route.)
+Pendant Fête des flammes, ajoute des objets spéciaux aux récompenses de quête. Augmente attaque et défense.
+Pendant Fête des flammes, ajoute des objets spéciaux aux récompenses. (Hors quête rejointe en cours de route.)
+Pendant Veillée des rêves, ajoute des objets spéciaux aux récompenses de quête. Augmente attaque et défense.
+Pendant Veillée des rêves, ajoute des objets spéciaux aux récompenses. (Hors quête rejointe en cours de route.)
+Permet d'obtenir plus de récompenses cible. (Hors quête rejointe en cours de route.)
+Permet d'utiliser des fioles de léthargie.
+Permet d'utiliser des fioles de paralysie.
+Permet d'utiliser des fioles de poison.
+Permet d'utiliser des fioles de sommeil.
+Permet d'utiliser des fioles explosives.
+Permet de digérer les champignons bleus et les champignons vénéneux.
+Permet de dépecer les monstres une fois de plus lors des quêtes. (Hors quête rejointe en cours de route.)
+Permet de monter et de blesser les monstres plus facilement.
+Permet de partager 33 % des effets des objets avec les alliés même à grande distance.
+Permet de partager 33 % des effets des objets avec les alliés à proximité.
+Permet de partager 66 % des effets des objets avec les alliés même à grande distance.
+Permet de partager 66 % des effets des objets avec les alliés même à très grande distance.
+Permet de partager tous les effets des objets avec les alliés même à très grande distance.
+Permet de vous débarrasser rapidement de l'état Toile et du fléau-givre.
+Permet de vous débarrasser très rapidement de l'état Toile et du fléau-givre.
+Permet également d'augmenter l'esquive en cas de fléau-bulles mineur.
+Permet également de digérer les champinitros et les champaralysies.
+Permet également de digérer les mandragores, les fléaux du diable et les champexciteurs.
+Prolonge Poussée d'adrénaline. Prolonge l'effet une fois en cas de réactivation alors que le talent est actif.
+Prolonge la durée de l'effet de votre poison de 20 %.
+Protège de l'état Toile et du fléau-givre.
+Protège de la paralysie.
+Protège de la puanteur.
+Protège des effets de Défense réduite.
+Protège des hémorragies.
+Protège des étourdissements.
+Protège du fléau-bulles majeur et permet d'activer le fléau-bulles mineur en esquivant plusieurs fois.
+Protège du fléau-explosion.
+Protège du poison.
+Protège du sommeil.
+Puissance explosive +10 %
+Puissance explosive +20 %
+Puissance explosive +30 %
+Puissance tir rapide +5 %
+Quadruple la vitesse de récupération des dégâts temporaires.
+Restaure 100 points de vie.
+Restaure 50 points de vie.
+Restaure 80 points de vie.
+Restaure de la vie quand vous détruisez une blessure sur un grand monstre.
+Restaure de la vie tant que vous attaquez. La régénération varie selon l'arme.
+Restaure une quantité modérée de vie quand vous détruisez une blessure sur un grand monstre.
+Restaure une quantité modérée de vie tant que vous attaquez. La régénération varie selon l'arme.
+Retarde et réduit grandement les dégâts des fléaux-explosion.
+Retarde et réduit les dégâts des fléaux-explosion.
+Réduit de 50 % la consommation d'endurance lorsque vous grimpez.
+Réduit grandement le nombre de fois que vous subissez des dégâts de poison.
+Réduit grandement les dégâts subis en cas d'hémorragie.
+Réduit l'affûtage d'un cycle.
+Réduit l'affûtage de deux cycles.
+Réduit la durée de la puanteur de 50 %.
+Réduit la durée des effets de Défense réduite de 50 %.
+Réduit la durée des effets de Défense réduite de 75 %.
+Réduit le nombre de fois que vous subissez des dégâts de poison.
+Réduit les dégâts subis de 10 %, et de 20 % additionnels dans certaines conditions.
+Réduit les dégâts subis de 20 % quand votre vie est pleine.
+Réduit les dégâts subis de 20 %, et de 30 % additionnels dans certaines conditions.
+Réduit les dégâts subis de 30 %, et de 50 % additionnels dans certaines conditions.
+Réduit les dégâts subis de 35 % quand votre vie est pleine.
+Réduit les dégâts subis en cas d'hémorragie.
+Réduit les dégâts uniques et élémentaires dans les Ruines de Wyveria.
+Réduit les effets des petits rugissements.
+Réduit temporairement la perte d'endurance lorsque la vie est inférieure ou égale à 40 %.
+Résistance Dragon +12
+Résistance Dragon +20 Défense +10
+Résistance Dragon +6
+Résistance Eau +12
+Résistance Eau +20 Défense +10
+Résistance Eau +6
+Résistance Feu +12
+Résistance Feu +20 Défense +10
+Résistance Feu +6
+Résistance Foudre +12
+Résistance Foudre +20 Défense +10
+Résistance Foudre +6
+Résistance Glace +12
+Résistance Glace +20 Défense +10
+Résistance Glace +6
+Réussir 5 attaques d'affilée renforce encore plus l'effet.
+Réussir 5 attaques d'affilée renforce modérément l'effet.
+Réussir 5 attaques d'affilée renforce un peu plus l'effet.
+Réussir 5 attaques d'affilée renforce énormément l'effet.
+Subir des dégâts temporaires augmente l'att. élémentaire, et certaines attaques chargées (nv 3) de la grande épée sont renforcées.
+Tranchant +10
+Tranchant +20
+Tranchant +30
+Tranchant +40
+Tranchant +50
+Triple la vitesse de récupération des dégâts temporaires.
+Un objet supplémentaire obtenu depuis les carcasses.
+Une herbe supplémentaire par collecte.
+Utiliser l'émote [Victoire !] augmente l'attaque des alliés proches. (Accru sur Palicos/Chasseurs de soutien.)
+Utiliser l'émote [Victoire !] augmente modérément l'attaque des alliés proches. (Accru sur Palicos/Chasseurs de soutien.)
+Vitesse +10 %
+Vitesse +20 % Puissance morphose +10 %
+Vitesse +30 % Puissance morphose +20 %
+Vitesse de récupération d'endurance +10 %
+Vitesse de récupération d'endurance +30 %
+Vitesse de récupération d'endurance +50 %.
+Vous inflige la Furie et augmente votre attaque face aux grands monstres. Après guérison, l'attaque est encore accrue.
+Vous inflige la Furie face aux grands monstres.
+Vous permet d'effectuer l'action spéciale : Nuit noirissime.
+Étourdissement +20 %
+Étourdissement +30 %
+Étourdissement +40 %
+Évite les chutes et les repoussements.
+Évite les repoussements et transforme les chutes en repoussements.
+Évite les repoussements.
