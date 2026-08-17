@@ -1,9 +1,9 @@
 # 🔍 AUDIT COMPLET - MH WILDS BUILDER
 
 ## 📌 CONTEXTE
-- **Projet** : Builder Monster Hunter Wilds
+- **Projet** : Builder Monster Hunter Wilds Français
 - **Framework** : React + Vite + TypeScript + Tailwind
-- **Bug Connu** : Les talents ne modifient pas les statistiques
+- **Bug Connu** : A définir
 - **Phase** : 2.5 (calculs de stats)
 
 ## 🎯 FICHIERS CRITIQUES À AUDITER
@@ -12,7 +12,7 @@
 https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/types/wilds.ts
 https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/types/stats.ts
 
-### 2. Logique de Calcul (⭐ BUG ICI)
+### 2. Logique de Calcul
 https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/utils/calculations.ts
 https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/utils/statsParser.ts
 
@@ -30,7 +30,7 @@ https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/tsconfig.json
 
 ## 🎯 DEMANDES D'AUDIT
 
-1. **BUGS** : Quels bugs voyez-vous dans calculations.ts et statsParser.ts ?
+1. **BUGS** : Quels bugs voyez-vous dans l'ensemble des fichiers ?
 2. **ARCHITECTURE** : Comment les talents doivent modifier les stats ?
 3. **PLAN D'ACTION** : Quel ordre de fixes recommandez-vous ?
 4. **CODE REVIEW** : Problèmes de types TypeScript ?
