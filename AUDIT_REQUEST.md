@@ -243,5 +243,5 @@ Le rapport final doit fournir :
 - Test de validation : …
 ```
 
-> **Important :** ne pas se limiter à vérifier que le talent apparaît dans l’interface. Le point déterminant est de prouver que le talent sélectionné est présent dans l’état source du calcul, correctement agrégé, puis effectivement appliqué à la statistique concernée.
+> **Important :** ne pas se limiter à vérifier que le talent apparaît dans l’interface. Le point déterminant est de prouver que le talent sélectionné est présent dans l’état source du calcul, correctement agrégé, puis effectivement appliqué à la statistique concernée. Et d'optimiser l'ensemble des fichiers et du code de manière général
 
