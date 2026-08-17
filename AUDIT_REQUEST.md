@@ -35,5 +35,6 @@ https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/tsconfig.json
 3. **PLAN D'ACTION** : Quel ordre de fixes recommandez-vous ?
 4. **CODE REVIEW** : Problèmes de types TypeScript ?
 5. **PERFORMANCE** : Optimisations possibles ?
+6. **ANTICIPATION PERFORMANCE** : Optimisations dans le but que le site Vercel final soit le plus fluide possible avant de poursuivre le projet
 
 Merci ! 🚀
