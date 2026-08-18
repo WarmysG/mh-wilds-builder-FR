@@ -38,10 +38,9 @@ Merci d’identifier précisément :
 
 Ces fichiers définissent les formes attendues pour les équipements, les talents et les statistiques. Vérifier leur compatibilité avec les réponses réelles de l’API et avec les objets effectivement manipulés par les composants.
 
-| Fichier | URL raw GitHub |
-|---|---|
-| `src/types/stats.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/types/stats.ts> |
-| `src/types/wilds.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/types/wilds.ts> |
+ Fichier  URL raw GitHub 
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/types/wilds.ts
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/types/stats.ts
 
 **Points de contrôle :**
 
@@ -56,13 +55,13 @@ Ces fichiers définissent les formes attendues pour les équipements, les talent
 
 C’est la zone prioritaire de l’audit : elle doit démontrer, étape par étape, comment les talents deviennent des bonus de statistiques.
 
-| Fichier | URL raw GitHub |
-|---|---|
-| `src/utils/calculations.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/utils/calculations.ts> |
-| `src/utils/mappage.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/utils/mappage.ts> |
-| `src/utils/statsKeywords.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/utils/statsKeywords.ts> |
-| `src/utils/statsParser.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/utils/statsParser.ts> |
-| `test-parser.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/test-parser.ts> |
+ Fichier  URL raw GitHub 
+
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/utils/calculations.ts
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/utils/statsParser.ts
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/utils/statsKeywords.ts
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/utils/mappage.ts
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/test-parser.ts
 
 **Questions spécifiques sur le calcul :**
 
@@ -96,11 +95,10 @@ C’est la zone prioritaire de l’audit : elle doit démontrer, étape par éta
 
 ### 2.3 Hooks et état du build
 
-| Fichier | URL raw GitHub |
-|---|---|
-| `src/hooks/useBuildState.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/hooks/useBuildState.ts> |
-| `src/hooks/useJoyauxAPI.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/hooks/useJoyauxAPI.ts> |
-| `src/hooks/useWildsAPI.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/hooks/useWildsAPI.ts> |
+ Fichier URL raw GitHub 
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/hooks/useBuildState.ts
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/hooks/useJoyauxAPI.ts
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/hooks/useWildsAPI.ts
 
 **Questions spécifiques sur l’état :**
 
@@ -116,14 +114,13 @@ C’est la zone prioritaire de l’audit : elle doit démontrer, étape par éta
 
 ### 2.4 Composants React
 
-| Fichier | URL raw GitHub |
-|---|---|
-| `src/components/BuilderLayout.tsx` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/BuilderLayout.tsx> |
-| `src/components/EquipmentGrid.tsx` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/EquipmentGrid.tsx> |
-| `src/components/SelectionJoyauModal.tsx` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/SelectionJoyauModal.tsx> |
-| `src/components/SelectionJoyauxSlot.tsx` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/SelectionJoyauxSlot.tsx> |
-| `src/components/SelectionModal.tsx` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/SelectionModal.tsx> |
-| `src/components/StatsPanel.tsx` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/StatsPanel.tsx> |
+ Fichier  URL raw GitHub 
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/BuilderLayout.tsx
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/EquipmentGrid.tsx
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/StatsPanel.tsx
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/SelectionModal.tsx
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/SelectionJoyauModal.tsx
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/components/SelectionJoyauxSlot.tsx
 
 **Questions spécifiques sur l’interface :**
 
@@ -142,17 +139,14 @@ C’est la zone prioritaire de l’audit : elle doit démontrer, étape par éta
 
 Ces fichiers peuvent expliquer un problème de build, de résolution de modules, de variables d’environnement ou de compilation qui masque le comportement réel.
 
-| Fichier | URL raw GitHub |
-|---|---|
-| `src/App.tsx` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/App.tsx> |
-| `src/main.tsx` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/main.tsx> |
-| `src/App.css` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/App.css> |
-| `src/index.css` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/index.css> |
-| `package.json` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/package.json> |
-| `tsconfig.json` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/tsconfig.json> |
-| `vite.config.ts` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/vite.config.ts> |
-| `tailwind.config.js` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/tailwind.config.js> |
-| `postcss.config.js` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/postcss.config.js> |
+ Fichier URL raw GitHub 
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/App.tsx
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/src/main.tsx
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/package.json
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/vite.config.ts
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/tsconfig.json
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/tailwind.config.js
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/postcss.config.js
 
 **À vérifier :**
 
@@ -168,11 +162,10 @@ Ces fichiers peuvent expliquer un problème de build, de résolution de modules,
 
 ## 4. Assets et données de référence
 
-| Fichier | URL raw GitHub |
-|---|---|
-| `README.md` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/README.md> |
-| `descriptions_uniques.txt` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/descriptions_uniques.txt> |
-| `skills_fr_complet.json` | <https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/skills_fr_complet.json> |
+
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/skills_fr_complet.json
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/descriptions_uniques.txt
+https://raw.githubusercontent.com/WarmysG/mh-wilds-builder-FR/main/README.md
 
 **Questions sur les données :**
 
