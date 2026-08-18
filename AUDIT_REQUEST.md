@@ -487,6 +487,8 @@ export interface BonusStatConditionnel extends BonusStat {
     condition: string; // Texte brut de la condition, affiché à l'utilisateur
 }
 
+---
+
 **Points de contrôle :**
 
 - représentation d’un talent : `id`, nom, niveau, rangs et bonus ;
